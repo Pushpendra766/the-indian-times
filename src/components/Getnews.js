@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export function Getnews() {
     const [news, setnews] = useState([]);
+
     const fetchNews = function() {
         axios
             .get(
@@ -13,6 +14,10 @@ export function Getnews() {
                 setnews(response.data.articles);
             });
     };
+    useEffect(() => {
+        alert("Click 'Fetch News' to get latest news of India.");
+    }, []);
+
     return (
         <>
             <div className="text-center">
