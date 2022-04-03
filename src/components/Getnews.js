@@ -7,7 +7,7 @@ export function Getnews() {
     const fetchNews = function() {
         axios
             .get(
-                `https://newsapi.org/v2/top-headlines?country=in&apiKey=dbf7fff128584ef5b4731e72738e2afc`
+                `https://newsapi.org/v2/top-headlines?country=in&apiKey=API_KEY`
             )
             .then(response => {
                 console.log(response);
