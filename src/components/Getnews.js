@@ -1,18 +1,34 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export function Getnews() {
+export function Getnews({ category }) {
     const [news, setnews] = useState([]);
 
     const fetchNews = function() {
-        axios
-            .get(
-                `https://newsapi.org/v2/top-headlines?country=in&apiKey=API_KEY`
-            )
-            .then(response => {
-                console.log(response);
-                setnews(response.data.articles);
-            });
+        const API_KEY = "API_KEY";
+        if (category) {
+            axios
+                .get(
+                    "https://newsapi.org/v2/top-headlines?country=in&category=" +
+                        category +
+                        "&apiKey=" +
+                        API_KEY
+                )
+                .then(response => {
+                    console.log(response);
+                    setnews(response.data.articles);
+                });
+        } else {
+            axios
+                .get(
+                    "https://newsapi.org/v2/top-headlines?country=in&apiKey=" +
+                        API_KEY
+                )
+                .then(response => {
+                    console.log(response);
+                    setnews(response.data.articles);
+                });
+        }
     };
     // useEffect(() => {
     //     alert("Click 'Fetch News' to get latest news of India.");
@@ -20,6 +36,7 @@ export function Getnews() {
 
     return (
         <>
+            {console.log("GEtnews")}
             <div className="text-center">
                 <button className="btn btn-primary" onClick={fetchNews}>
                     Fetch News
@@ -37,7 +54,7 @@ export function Getnews() {
                                     <img
                                         src={value.urlToImage}
                                         className="card-img-top"
-                                        alt="news image"
+                                        alt="news"
                                     />
                                     <div className="card-body">
                                         <h5 className="card-title">
@@ -47,12 +64,13 @@ export function Getnews() {
                                                   "..."}
                                         </h5>
                                         <p className="card-text">
-                                            {value.description.length <= 75
+                                            {/* {value.description.length <= 75
                                                 ? value.description.slice(0, 75)
                                                 : value.description.slice(
                                                       0,
                                                       75
-                                                  ) + "..."}
+                                                  ) + "..."} */}
+                                            {value.description}
                                         </p>
                                         <a
                                             href={value.url}
