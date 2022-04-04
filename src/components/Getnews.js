@@ -14,9 +14,9 @@ export function Getnews() {
                 setnews(response.data.articles);
             });
     };
-    useEffect(() => {
-        alert("Click 'Fetch News' to get latest news of India.");
-    }, []);
+    // useEffect(() => {
+    //     alert("Click 'Fetch News' to get latest news of India.");
+    // }, []);
 
     return (
         <>
@@ -25,7 +25,6 @@ export function Getnews() {
                     Fetch News
                 </button>
             </div>
-
             <div className="container my-5">
                 <div className="row">
                     {news.map(value => {
@@ -48,7 +47,12 @@ export function Getnews() {
                                                   "..."}
                                         </h5>
                                         <p className="card-text">
-                                            {value.description}
+                                            {value.description.length <= 75
+                                                ? value.description.slice(0, 75)
+                                                : value.description.slice(
+                                                      0,
+                                                      75
+                                                  ) + "..."}
                                         </p>
                                         <a
                                             href={value.url}
