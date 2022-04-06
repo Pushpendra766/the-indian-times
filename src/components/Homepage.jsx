@@ -4,7 +4,7 @@ export const Homepage = () => {
     const [news, setnews] = useState([]);
     axios
         .get(
-            "https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=075d401d8f4a4a98b40430e0ebc11626"
+            "https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey"+API_KEY
         )
         .then(response => {
             // console.log(response.data.articles);
