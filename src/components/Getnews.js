@@ -5,7 +5,7 @@ export function Getnews({ category }) {
     const [news, setnews] = useState([]);
 
     const fetchNews = function() {
-        const API_KEY = "075d401d8f4a4a98b40430e0ebc11626";
+        const API_KEY = "API_KEY";
         if (category) {
             axios
                 .get(
