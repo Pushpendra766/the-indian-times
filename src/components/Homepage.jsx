@@ -7,7 +7,7 @@ export const Homepage = () => {
             "https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey"+API_KEY
         )
         .then(response => {
-            // console.log(response.data.articles);
+            console.log(response.data.articles);
             setnews(response.data.articles);
         });
 
