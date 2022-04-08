@@ -1,4 +1,4 @@
-# This is a News Site app created using ReactJS.
+# Indian Times is a news site created using ReactJS.
 # Introduction 
 This site is created using ReactJS and Bootstrap.
 # API
