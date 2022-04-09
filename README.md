@@ -1,6 +1,6 @@
-# Indian Times is a news site created using ReactJS.
+# Indian Times.
 # Introduction 
-This site is created using ReactJS and Bootstrap.
+This site is created using ReactJS and Bootstrap. It is a news site that fetches news from api.
 # API
 You need to replace API_KEY with your api key from https://newsapi.org/
 # Features 
