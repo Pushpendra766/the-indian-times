@@ -1,6 +1,7 @@
 # Indian Times.
 # Introduction 
 This site is created using ReactJS and Bootstrap. It is a news site that fetches news from api.
+You can view the live preview [here](https://theindiantimes.netlify.app)
 # API
 You need to replace API_KEY with your api key from https://newsapi.org/
 # Features 
